@@ -11,10 +11,11 @@ import eventsim.Event;
     this.customer = customer;
     }
     @Override
-    public Event happen() {
-        return new EndShoppingEvent(customer);
+    public Event happen() { return new QueForTillEvent(customer);}
 
-    }
+
+
+
 }
 
 

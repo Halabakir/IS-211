@@ -26,8 +26,9 @@ public class StartCheckoutEvent extends Event {
     @Override
     public String toString() {
         //return "QueForTillEvent {Start Que at : " + getTime() + " ,customer = " + customer.name
-        //        + " ,Queued for : " + customer.checkoutDuration + '}';
+               // + " ,Queued for : " + customer.checkoutDuration + '}';
         return "Customer : " + customer.name + " Exits que at : " + customer.nextInLineTime + " Current time : " + EventSim.getClock();
     }
+
 
 }
