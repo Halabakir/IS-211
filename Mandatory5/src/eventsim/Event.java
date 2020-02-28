@@ -7,7 +7,7 @@ package eventsim;
 
 
 /**
- * BAse class for events
+ * Base class for events
  *
  * @author evenal
  */

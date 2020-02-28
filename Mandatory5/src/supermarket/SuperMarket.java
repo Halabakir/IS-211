@@ -41,6 +41,7 @@ public class SuperMarket {
             init.add(new BeginShoppingEvent(c));
             customers.add(c);
         }
+
     }
 
 
@@ -49,4 +50,10 @@ public class SuperMarket {
         sim.setup(init);
         sim.run();
     }
+
+   // public void getSim() {
+      // EventSim sim = EventSim.getInstance();
+       //sim.setup(init);
+      // sim.run();
+
 }

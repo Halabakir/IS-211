@@ -35,6 +35,7 @@ public class EventSim {
         return theSim;
     }
 
+    public static EventSim getTheSim() { return theSim; }
 
     public static int getClock() {
         return theSim.clock;
@@ -90,8 +91,7 @@ public class EventSim {
             addEvent(e.happen());
 
             System.err.format("Time %d: Processing %s. Event queue:\n", clock, e.toString());
-            for (Event qe : eventQueue)
-                System.err.println("     " + qe);
+
         }
     }
 }

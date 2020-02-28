@@ -20,6 +20,7 @@ public class BeginShoppingEvent extends Event {
     public BeginShoppingEvent(Customer customer) {
         super(customer.beginShoppingTime);
         this.customer = customer;
+
     }
 
 
