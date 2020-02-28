@@ -23,7 +23,7 @@ public class SuperMarket {
     }
 
     public static final int NUM_CHECKOUTS = 1;
-    public static final int NUM_CUSTOMERS = 4;
+    public static final int NUM_CUSTOMERS = 2;
 
     Checkout[] checkouts;
     List<Customer> customers;
@@ -31,16 +31,24 @@ public class SuperMarket {
 
 
     public SuperMarket() {
-        checkouts = new Checkout[NUM_CHECKOUTS];
+        checkouts = new Checkout[NUM_CHECKOUTS]; //Array list of number of checkouts
+
         for (int i = 0; i < NUM_CHECKOUTS; i++)
-            checkouts[i] = new Checkout(this, i);
-        customers = new ArrayList<>();
-        init = new ArrayList<Event>();
+            checkouts[i] = new Checkout(this, i); //Add number of checkout objects, with shop and number as param
+
+        customers = new ArrayList<>(); //new ArrayList of Customers
+        init = new ArrayList<Event>(); //new ArrayList of Events
+
         for (int i = 0; i < NUM_CUSTOMERS; i++) {
-            Customer c = new Customer(this, i);
-            init.add(new BeginShoppingEvent(c));
-            customers.add(c);
+            Customer c = new Customer(this, i); //Create new customer with this shop and a number as param
+            init.add(new BeginShoppingEvent(c)); //Add a shopping event with the newly created customer as param
+            customers.add(c); // Add the customer to the customer list
         }
+
+    }
+
+    public Checkout shortestQue() {
+        return checkouts[0];
 
     }
 

@@ -18,7 +18,7 @@ public class BeginShoppingEvent extends Event {
 
 
     public BeginShoppingEvent(Customer customer) {
-        super(customer.beginShoppingTime);
+        super(customer.beginShoppingTime); //super(time) aka the time this event starts
         this.customer = customer;
 
     }
@@ -26,6 +26,14 @@ public class BeginShoppingEvent extends Event {
 
     @Override
     public Event happen() {
-        return new EndShoppingEvent(customer);
+        return new PickWaresEvent(customer);
+    }
+
+    @Override
+    public String toString() {
+        //return "BeginShoppingEvent {Enter Time: " + customer.beginShoppingTime + " ,customer = " + customer.name;
+
+        //return "Customer : " + customer.name + " Enter Shop at : " + customer.beginShoppingTime;
+        return null;
     }
 }

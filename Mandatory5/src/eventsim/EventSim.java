@@ -5,6 +5,8 @@
  */
 package eventsim;
 
+import supermarket.BeginShoppingEvent;
+
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -56,7 +58,7 @@ public class EventSim {
 
     public EventSim() {
         eventQueue = new PriorityQueue<>(new EventTimeComparator());
-        random = new Random(42);
+        random = new Random(38);
     }
 
 
@@ -90,8 +92,11 @@ public class EventSim {
             clock = e.getTime();
             addEvent(e.happen());
 
-            System.err.format("Time %d: Processing %s. Event queue:\n", clock, e.toString());
+            System.out.println(e.toString());
 
+            //System.err.format("Time %d: Processing %s. Event queue:\n", clock, e.toString());
+            //for (Event qe : eventQueue)
+            //    System.err.println("     " + qe);
         }
     }
 }
